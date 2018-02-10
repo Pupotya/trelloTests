@@ -50,10 +50,13 @@ public class Elem {
         find().sendKeys(text);
     }
 
+    public String getText() {
+        return find().getText();
+    }
+
     public void click(){
         find().click();
     }
-
     public boolean isDisplayed() {
         return find().isDisplayed();
     }
