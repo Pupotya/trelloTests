@@ -6,6 +6,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.LoginForm;
 
 import static core.MethodsFactory.driver;
 
@@ -52,7 +53,6 @@ public class Elem {
     public void click(){
         find().click();
     }
-
 
     public boolean isDisplayed() {
         return find().isDisplayed();

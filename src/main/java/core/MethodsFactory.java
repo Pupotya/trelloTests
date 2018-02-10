@@ -10,5 +10,18 @@ public class MethodsFactory {
         return DRIVER.get();
     }
 
+    public String randomEmail() {
 
+        return Math.random() + "testmail@gmail.com";
+    }
+
+    public String randomPass() {
+
+        return String.valueOf(Math.random() * 100000);
+    }
+
+    public String randomName() {
+
+        return "lolololololololololo";
+    }
 }
