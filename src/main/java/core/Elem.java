@@ -53,4 +53,8 @@ public class Elem {
         find().click();
     }
 
+
+    public boolean isDisplayed() {
+        return find().isDisplayed();
+    }
 }

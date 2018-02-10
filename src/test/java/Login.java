@@ -20,13 +20,8 @@ public class Login extends BrowserFactory {
     public void login(String email, String password) {
         mainPage.open();
         mainPage.loginForm.login(email, password);
-
-        Assert.assertTrue("".contains(""));
-        try {
-            Thread.sleep(50000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        mainPage.loginForm.isElementPresent();
+        Assert.assertTrue(mainPage.loginForm.isElementPresent());
     }
 
 }
