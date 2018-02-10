@@ -1,7 +1,6 @@
 package core;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -16,8 +15,4 @@ public class BrowserFactory extends MethodsFactory {
         driver().close();
     }
 
-    @AfterMethod
-    public void deleteCookie() {
-        driver().manage().deleteAllCookies();
-    }
 }

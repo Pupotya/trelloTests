@@ -1,8 +1,9 @@
 package core;
 
 import org.openqa.selenium.WebDriver;
+import utils.Utils;
 
-public class MethodsFactory {
+public class MethodsFactory extends Utils {
 
     static ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
 
@@ -10,18 +11,13 @@ public class MethodsFactory {
         return DRIVER.get();
     }
 
-    public String randomEmail() {
-
-        return Math.random() + "testmail@gmail.com";
+    public boolean isElementPresent(Elem element) {
+        return element.isDisplayed();
     }
 
-    public String randomPass() {
-
-        return String.valueOf(Math.random() * 100000);
+    public void clearCookie() {
+        driver().manage().deleteAllCookies();
     }
 
-    public String randomName() {
 
-        return "lolololololololololo";
-    }
 }
