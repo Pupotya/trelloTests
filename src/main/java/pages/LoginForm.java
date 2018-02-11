@@ -18,5 +18,12 @@ public class LoginForm extends MethodsFactory {
 
     }
 
+    //TODO: implements auto login for Vika tests
+    public void autoLogin() {
+        driver().get("https://trello.com/?method=password&factors%5Buser%5D=testmail4444%40gmail.com&factors%5Bpassword%5D=q1w2e3rt4yui");
+    }
 
+    public void open() {
+        driver().get(getProp("loginUrl"));
+    }
 }

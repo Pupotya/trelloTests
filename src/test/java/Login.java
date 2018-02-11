@@ -16,13 +16,13 @@ public class Login extends BrowserFactory {
     @DataProvider(name = "emailsAndPassword")
     public Object[][] emailsProvider() {
         return new Object[][]{
-                {"romandubovyi@gmail.com", "tktdfnjh1993"},
+                {"testmail4444@gmail.com", "q1w2e3rt4yui"},
         };
     }
 
     @Test(dataProvider = "emailsAndPassword", priority = 1)
     public void login(String email, String password) {
-        mainPage.open();
+        mainPage.loginForm.open();
         mainPage.loginForm.login(email, password);
         mainPage.loginForm.isElementPresent(registrationPO.getHeaderNotification());
         Assert.assertTrue(mainPage.loginForm.isElementPresent(registrationPO.getNotificationIcon()));

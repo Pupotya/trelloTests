@@ -14,20 +14,19 @@ public class BoardPage extends MethodsFactory {
 
     private Elem createdCard = new Elem(By.cssSelector(".list-card-title.js-card-name"));
 
-
     private Elem dropDown = new Elem(By.cssSelector(".list-header-extras-menu.dark-hover.js-open-list-menu"));
 
     private Elem archiveAllCard = new Elem(By.cssSelector(".js-archive-cards"));
 
     private Elem confirmBtn = new Elem(By.cssSelector(".js-confirm.full.negate"));
 
-
+//TODO will be able after autologin
 //    public void openTestedBoard() {
 //        testedBoard.click();
 //    }
 
     public void openBoard() {
-        driver().get("https://trello.com/b/whHcwYyv/create-and-update");
+        driver().get(getProp("openBoardUrl"));
     }
 
 

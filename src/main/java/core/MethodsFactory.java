@@ -3,6 +3,7 @@ package core;
 import org.openqa.selenium.WebDriver;
 import utils.Utils;
 
+
 public class MethodsFactory extends Utils {
 
     static ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
@@ -18,6 +19,5 @@ public class MethodsFactory extends Utils {
     public void clearCookie() {
         driver().manage().deleteAllCookies();
     }
-
 
 }

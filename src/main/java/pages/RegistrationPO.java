@@ -4,6 +4,7 @@ import core.Elem;
 import core.MethodsFactory;
 import org.openqa.selenium.By;
 
+
 public class RegistrationPO extends MethodsFactory {
 
     private static Elem signUp = new Elem(By.cssSelector(".global-header-section-button.mod-primary"), "Sign Up");
@@ -28,5 +29,9 @@ public class RegistrationPO extends MethodsFactory {
         regEmail.type(email);
         passInput.type(password);
         regSign.click();
+    }
+
+    public void open() {
+        driver().get(getProp("baseUrl"));
     }
 }

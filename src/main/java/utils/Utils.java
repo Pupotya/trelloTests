@@ -1,6 +1,6 @@
 package utils;
 
-public class Utils {
+public class Utils extends Props {
 
     private static int randomNumberGenerator(double range) {
 
