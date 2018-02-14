@@ -10,14 +10,12 @@ import java.util.Properties;
 public class Props {
 
     private static final String relPath = "src/main/resources/trello_tests.properties";
-
+    private static File file = new File(relPath);
+    private static Properties props = new Properties();
 
     public String getProp(String parameter) {
 
-        File file = new File(relPath);
         String propPath = file.getAbsolutePath();
-
-        Properties props = new Properties();
 
         try {
             InputStream in = new FileInputStream(propPath);

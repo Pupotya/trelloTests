@@ -1,4 +1,5 @@
 import core.BrowserFactory;
+import core.CookieManager;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -33,7 +34,7 @@ public class RegistrationTests extends BrowserFactory {
         } catch (Exception e) {
             System.out.println("Notification is absent");
         }
-        clearCookie();
+        CookieManager.clearCookie();
     }
 
 }

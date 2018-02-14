@@ -6,9 +6,11 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.LoginForm;
+
+import java.util.List;
 
 import static core.MethodsFactory.driver;
+
 
 public class Elem {
 
@@ -30,6 +32,19 @@ public class Elem {
         return find(waitTime);
     }
 
+    public List<WebElement> findElements() {
+        WebDriverWait wait = new WebDriverWait(driver(), waitTime);
+        try {
+            return wait.withMessage(name).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+        } catch (TimeoutException e) {
+            if (e.getCause().toString().contains("org.openqa.selenium.NoSuchElementException")) {
+                NoSuchElementException ne = new NoSuchElementException("Elements: '" + toString() + "' not found on page: " + driver().getCurrentUrl());
+                ne.setStackTrace(e.getStackTrace());
+                throw ne;
+            }
+            throw e;
+        }
+    }
 
     public WebElement find(int waitTime){
         WebDriverWait wait = new WebDriverWait(driver(), waitTime);
@@ -57,7 +72,8 @@ public class Elem {
     public void click(){
         find().click();
     }
+
     public boolean isDisplayed() {
-        return find().isDisplayed();
+        return findElements().size() > 0;
     }
 }

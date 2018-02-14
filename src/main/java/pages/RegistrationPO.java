@@ -24,7 +24,7 @@ public class RegistrationPO extends MethodsFactory {
     }
 
     public void registration(String name, String email, String password) {
-        signUp.click();
+//        signUp.click();
         nameInput.type(name);
         regEmail.type(email);
         passInput.type(password);
@@ -32,6 +32,6 @@ public class RegistrationPO extends MethodsFactory {
     }
 
     public void open() {
-        driver().get(getProp("baseUrl"));
+        driver().get(getProp("baseUrl") + getProp("regUrl"));
     }
 }

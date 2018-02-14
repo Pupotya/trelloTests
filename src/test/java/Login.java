@@ -22,9 +22,11 @@ public class Login extends BrowserFactory {
 
     @Test(dataProvider = "emailsAndPassword", priority = 1)
     public void login(String email, String password) {
-        mainPage.loginForm.open();
-        mainPage.loginForm.login(email, password);
-        mainPage.loginForm.isElementPresent(registrationPO.getHeaderNotification());
+        //tyt poka debug
+        mainPage.openAsLoginedUser();
+//        mainPage.loginForm.open();
+//        mainPage.loginForm.login(email, password);
+//        mainPage.loginForm.isElementPresent(registrationPO.getHeaderNotification());
         Assert.assertTrue(mainPage.loginForm.isElementPresent(registrationPO.getNotificationIcon()));
     }
 
