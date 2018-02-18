@@ -6,37 +6,24 @@ import org.openqa.selenium.By;
 
 public class BoardPage extends MethodsFactory {
 
-    private Elem testedBoard = new Elem(By.name("Create and Update"));
     private Elem newCardName = new Elem(By.cssSelector(".open-card-composer"));
     private Elem addCardBtn = new Elem(By.cssSelector(".primary.confirm.mod-compact"));
-
     private Elem textField = new Elem(By.cssSelector(".list-card-composer-textarea"));
-
     private Elem createdCard = new Elem(By.cssSelector(".list-card-title.js-card-name"));
-
     private Elem dropDown = new Elem(By.cssSelector(".list-header-extras-menu.dark-hover.js-open-list-menu"));
-
     private Elem archiveAllCard = new Elem(By.cssSelector(".js-archive-cards"));
-
     private Elem confirmBtn = new Elem(By.cssSelector(".js-confirm.full.negate"));
 
-//TODO will be able after autologin
-//    public void openTestedBoard() {
-//        testedBoard.click();
-//    }
 
     public void openBoard() {
-        driver().get(getProp("openBoardUrl"));
+        driver().get(getProp("baseUrl") + getProp("openBoardUrl"));
     }
 
-
-    public void addCard() throws InterruptedException {
+    public void addCard() {
         openBoard();
         newCardName.click();
-        Thread.sleep(1000);
         textField.type("Test card");
         addCardBtn.click();
-        Thread.sleep(1000);
     }
 
     public String getNameOfCreatedCard() {
@@ -44,15 +31,13 @@ public class BoardPage extends MethodsFactory {
         return createdCard.getText();
     }
 
-    public void openDropDown() throws InterruptedException {
+    public void openDropDown() {
         dropDown.click();
-        Thread.sleep(2000);
     }
 
-    public void archiveCards() throws InterruptedException {
+    public void archiveCards() {
         openDropDown();
         archiveAllCard.click();
-        Thread.sleep(1000);
         confirmBtn.click();
 
     }

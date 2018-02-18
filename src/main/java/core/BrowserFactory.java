@@ -1,16 +1,17 @@
 package core;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BrowserFactory extends MethodsFactory {
 
-    @BeforeTest
+    @BeforeClass
     public void setUp(){
         DRIVER.set(new ChromeDriver());
     }
-    @AfterTest
+
+    @AfterClass
     public void tearDown(){
         driver().close();
     }
