@@ -14,7 +14,7 @@ public class TeamMemberTest extends BrowserFactory {
     public void addMember() {
         mainPage.openAsLoginedUser();
         teamPage.openMember();
-        String nameOfAddedMember = teamPage.getNameOfAddedMember();
+        //String nameOfAddedMember = teamPage.getNameOfAddedMember();
         //Assert.assertEquals(nameOfAddedMember, "@max83796153");  //TODO fix assert for correct checking
     }
 
@@ -22,7 +22,7 @@ public class TeamMemberTest extends BrowserFactory {
     public void deleteMember() {
         mainPage.openAsLoginedUser();
         teamPage.deleteMember();
-        String nameOfAddedMember = teamPage.getNameOfAddedMember();
+        //String nameOfAddedMember = teamPage.getNameOfAddedMember();
         //Assert.assertEquals(nameOfAddedMember, "@testuser604");        //TODO fix assert for correct checking
     }
 
