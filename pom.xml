@@ -37,6 +37,7 @@
             <include>Login.class</include>
             <include>BoardTests.class</include>
             <include>RegistrationTests.class</include>
+            <include>TeamMemberTest.class</include>
           </includes>
         </configuration>
       </plugin>
