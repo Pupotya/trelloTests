@@ -19,6 +19,7 @@ public class PdfFillerPO extends MethodsFactory {
     private static Elem renameIcon = new Elem(By.cssSelector(".g-ibtn.i-rename:nth-child(3)"));
     private static Elem renameInput = new Elem(By.cssSelector(".modal-body .form-control.small"));
     private static Elem fileName = new Elem(By.cssSelector(".react-contextmenu-wrapper .mf-doc-item__col.mf-doc-item__col--overflow .mf-doc-item__row:first-child span"));
+    private static Elem addFolderIcon = new Elem(By.cssSelector(".mf-icon-add-folder"));
 //    private static Elem loader = new Elem(By.cssSelector(".g-loader__circle"));
 
 
@@ -58,11 +59,16 @@ public class PdfFillerPO extends MethodsFactory {
         renameIcon.click();
     }
 
-    public void typeToRename() {
-        renameInput.type("TestFile");
+    public void typeToInput() {
+        renameInput.type("Test");
     }
 
     public String getFileName() {
         return fileName.getText();
+    }
+
+    public void addFolder() {
+        addFolderIcon.click();
+
     }
 }

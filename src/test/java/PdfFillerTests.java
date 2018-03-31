@@ -35,10 +35,20 @@ public class PdfFillerTests extends BrowserFactory {
         pdfFillerPO.open();
         pdfFillerPO.login();
         pdfFillerPO.clickRenameIcon();
-        pdfFillerPO.typeToRename();
+        pdfFillerPO.typeToInput();
         pdfFillerPO.clickOrangeBtn();
         String fileName = pdfFillerPO.getFileName();
-        Assert.assertTrue(fileName.equals("TestFile"));
+        Assert.assertTrue(fileName.equals("Test"));
         CookieManager.clearCookie();
+    }
+
+    @Test
+    public void createFolder() {
+        pdfFillerPO.open();
+        pdfFillerPO.login();
+        pdfFillerPO.addFolder();
+        pdfFillerPO.typeToInput();
+        pdfFillerPO.clickOrangeBtn();
+
     }
 }
