@@ -10,4 +10,6 @@ public class MainPage extends MethodsFactory {
         driver().get(getProp("baseUrl"));
     }
 
+
+
 }
