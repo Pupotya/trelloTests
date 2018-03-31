@@ -1,11 +1,11 @@
 import core.BrowserFactory;
 import core.CookieManager;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegistrationPO;
-
 public class Login extends BrowserFactory {
 
     MainPage mainPage = new MainPage();
@@ -19,6 +19,7 @@ public class Login extends BrowserFactory {
     }
 
     @Test(dataProvider = "emailsAndPassword")
+    @Story("test user login")
     public void login(String email, String password) {
 
         mainPage.loginForm.open();

@@ -2,6 +2,7 @@ package pages;
 
 import core.Elem;
 import core.MethodsFactory;
+import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 
 public class LoginForm extends MethodsFactory {
@@ -10,6 +11,7 @@ public class LoginForm extends MethodsFactory {
     private static Elem passInput = new Elem(By.cssSelector("#password"), "Pass Input");
     private static Elem loginBtn = new Elem(By.cssSelector("#login"), "Login Button");
 
+    @Story("Login method")
     public void login(String email, String password) {
 
         emailInput.type(email);

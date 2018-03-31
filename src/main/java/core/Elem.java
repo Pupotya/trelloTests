@@ -6,6 +6,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.qameta.allure.Epic;
 
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class Elem {
         return find(waitTime);
     }
 
+    @Epic("find list Web Elements")
     public List<WebElement> findElements() {
         WebDriverWait wait = new WebDriverWait(driver(), waitTime);
         try {
@@ -46,6 +48,7 @@ public class Elem {
         }
     }
 
+    @Epic("find element")
     public WebElement find(int waitTime){
         WebDriverWait wait = new WebDriverWait(driver(), waitTime);
         try {
